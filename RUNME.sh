@@ -21,8 +21,9 @@ setvar() {
   fi
 }
 
-setvar COMPANY_FRIENDLY_NAME "$1" "Company name" "Simulanis Solutions"
+setvar COMPANY_FRIENDLY_NAME "$1" "Company name" "Simulanis Solutions pvt ltd"
 setvar COMPANY "$2" "Company name in lower case" "simulanis"
+setvar COMPANYGITHUB "$2" "Company Github name" "Team-Simulanis"
 setvar REPORT_EMAIL "$3" "Unacceptable behavior may be reported at" "support@${COMPANY}.com"
 setvar COMPANY_WEBSITE "$4" "Company website" "https://${COMPANY}.com"
 setvar REPOSITORY_NAME "$5" "Repository name/Package Name" "Package_template_unity"
@@ -33,6 +34,7 @@ setvar UNITY_VERSION "$8" "Unity version" "2021.3.11f1"
 # Escape special characters for input to be used in sed
 COMPANY_FRIENDLY_NAME=$(echo "$COMPANY_FRIENDLY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');
 COMPANY=$(echo "$COMPANY" | sed -e 's/[]\/$*.^[]/\\&/g');
+COMPANYGITHUB=$(echo "$COMPANYGITHUB" | sed -e 's/[]\/$*.^[]/\\&/g');
 REPORT_EMAIL=$(echo "$REPORT_EMAIL" | sed -e 's/[]\/$*.^[]/\\&/g');
 COMPANY_WEBSITE=$(echo "$COMPANY_WEBSITE" | sed -e 's/[]\/$*.^[]/\\&/g');
 REPOSITORY_NAME=$(echo "$REPOSITORY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');
@@ -46,7 +48,7 @@ echo 'Replacing template strings...'
 YEAR="$(date +'%Y')"
 
 # Form sed command and store it into a file. Ran into problems with white spaces when trying to pass this as parameter. 
-echo "s/{{REPOSITORY_NAME}}/""${REPOSITORY_NAME}""/g;s/{{FRIENDLY_NAME}}/""${FRIENDLY_NAME}""/g;s/{{DESCRIPTION}}/""${DESCRIPTION}""/g;s/{{UNITY_VERSION}}/""${UNITY_VERSION}""/g;s/{{COMPANY}}/""${COMPANY}""/g;s/{{COMPANY_FRIENDLY_NAME}}/""${COMPANY_FRIENDLY_NAME}""/g;s/{{YEAR}}/""${YEAR}""/g;s/{{COMPANY_WEBSITE}}/""${COMPANY_WEBSITE}""/g;s/{{REPORT_EMAIL}}/""${REPORT_EMAIL}""/g" > temp.txt
+echo "s/{{REPOSITORY_NAME}}/""${REPOSITORY_NAME}""/g;s/{{FRIENDLY_NAME}}/""${FRIENDLY_NAME}""/g;s/{{DESCRIPTION}}/""${DESCRIPTION}""/g;s/{{UNITY_VERSION}}/""${UNITY_VERSION}""/g;s/{{COMPANY}}/""${COMPANY}""/g;s/{{COMPANYGITHUB}}/""${COMPANYGITHUB}""/g;s/{{COMPANY_FRIENDLY_NAME}}/""${COMPANY_FRIENDLY_NAME}""/g;s/{{YEAR}}/""${YEAR}""/g;s/{{COMPANY_WEBSITE}}/""${COMPANY_WEBSITE}""/g;s/{{REPORT_EMAIL}}/""${REPORT_EMAIL}""/g" > temp.txt
 
 ( shopt -s globstar dotglob;
     for file in **; do
@@ -80,10 +82,10 @@ mv -f templates/LICENSE LICENSE
 mv -f templates/package.json package.json
 mv -f templates/.github .github
 
-rm -rf templates
+# rm -rf templates
 
 echo 'done.'
-rm RUNME.sh
+# rm RUNME.sh
 
 exit 0
 

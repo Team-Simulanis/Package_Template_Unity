@@ -13,7 +13,7 @@ since Unity does not provide standalone package testing solution.
 ```json
 {
   "dependencies": {
-    "com.{{COMPANY}}.{{REPOSITORY_NAME}}": "https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}.git"
+    "com.{{COMPANY}}.{{REPOSITORY_NAME}}": "https://github.com/{{COMPANYGITHUB}}/{{REPOSITORY_NAME}}.git"
   },
   "testables": [ "com.{{COMPANY}}.{{REPOSITORY_NAME}}" ]
 }

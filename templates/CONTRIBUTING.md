@@ -2,7 +2,7 @@
 
 We use fairly "standard" github contribution workflow:
 
-1. Make an [Issue](https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}/issues/new)
+1. Make an [Issue](https://github.com/{{COMPANYGITHUB}}/{{REPOSITORY_NAME}}/issues/new)
 2. Fork this repository (For further details, see https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
 3. Develop changes to a new branch to your forked repository
 4. Create a Pull Request from your forked repository against this repository

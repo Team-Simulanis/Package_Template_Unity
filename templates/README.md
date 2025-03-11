@@ -1,6 +1,6 @@
 [![npm package](https://img.shields.io/npm/v/com.{{COMPANY}}.{{REPOSITORY_NAME}})](https://www.npmjs.com/package/com.{{COMPANY}}.{{REPOSITORY_NAME}})
 [![openupm](https://img.shields.io/npm/v/com.{{COMPANY}}.{{REPOSITORY_NAME}}?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.{{COMPANY}}.{{REPOSITORY_NAME}}/)
-![Tests](https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}/workflows/Tests/badge.svg)
+![Tests](https://github.com/{{COMPANYGITHUB}}/{{REPOSITORY_NAME}}/workflows/Tests/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # {{FRIENDLY_NAME}}
@@ -58,7 +58,7 @@ Open `Packages/manifest.json` with your favorite text editor. Add following line
 ```json
 {
   "dependencies": {
-    "com.{{COMPANY}}.{{REPOSITORY_NAME}}": "https://github.com/{{COMPANY}}/{{REPOSITORY_NAME}}.git"
+    "com.{{COMPANY}}.{{REPOSITORY_NAME}}": "https://github.com/{{COMPANYGITHUB}}/{{REPOSITORY_NAME}}.git"
   }
 }
 ```
