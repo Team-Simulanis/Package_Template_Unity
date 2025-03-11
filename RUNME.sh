@@ -12,6 +12,12 @@ fi
 setvar() {
   local varname argument default prompt
   varname=$1; argument=$2; prompt=$3; default=$4
+ 
+ declare -g "$varname"="$default"
+}
+setvaruser() {
+  local varname argument default prompt
+  varname=$1; argument=$2; prompt=$3; default=$4
   if [[ $argument ]]; then
     declare -g "$varname"="$argument"
   elif read -r -e -p "$prompt (${default}):" "${varname?}" && [[ -n ${!varname} ]]; then
@@ -26,10 +32,10 @@ setvar COMPANY "$2" "Company name in lower case" "simulanis"
 setvar COMPANYGITHUB "$2" "Company Github name" "Team-Simulanis"
 setvar REPORT_EMAIL "$3" "Unacceptable behavior may be reported at" "support@${COMPANY}.com"
 setvar COMPANY_WEBSITE "$4" "Company website" "https://${COMPANY}.com"
-setvar REPOSITORY_NAME "$5" "Repository name/Package Name" "Package_template_unity"
-setvar FRIENDLY_NAME "$6" "Friendly name for project" "PackageTemplate"
-setvar DESCRIPTION "$7" "Description" "Package for Unity game engine."
-setvar UNITY_VERSION "$8" "Unity version" "2021.3.11f1"
+setvaruser REPOSITORY_NAME "$5" "Repository name/Package Name" "Package_template_unity"
+setvaruser FRIENDLY_NAME "$6" "Friendly name for project" "PackageTemplate"
+setvaruser DESCRIPTION "$7" "Description" "Package for Unity game engine."
+setvaruser UNITY_VERSION "$8" "Unity version" "2021.3.11f1"
 
 # Escape special characters for input to be used in sed
 COMPANY_FRIENDLY_NAME=$(echo "$COMPANY_FRIENDLY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');
