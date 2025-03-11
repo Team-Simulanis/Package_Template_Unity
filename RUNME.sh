@@ -82,10 +82,10 @@ mv -f templates/LICENSE LICENSE
 mv -f templates/package.json package.json
 mv -f templates/.github .github
 
-# rm -rf templates
+rm -rf templates
 
 echo 'done.'
-# rm RUNME.sh
+rm RUNME.sh
 
 exit 0
 
