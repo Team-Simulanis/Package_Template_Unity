@@ -21,12 +21,12 @@ setvar() {
   fi
 }
 
-setvar COMPANY_FRIENDLY_NAME "$1" "Company name" "3D Group"
-setvar COMPANY "$2" "Company name in lower case" "3d-group"
+setvar COMPANY_FRIENDLY_NAME "$1" "Company name" "Simulanis Solutions"
+setvar COMPANY "$2" "Company name in lower case" "simulanis"
 setvar REPORT_EMAIL "$3" "Unacceptable behavior may be reported at" "support@${COMPANY}.com"
 setvar COMPANY_WEBSITE "$4" "Company website" "https://${COMPANY}.com"
-setvar REPOSITORY_NAME "$5" "Repository name" "unity-simple-notifications"
-setvar FRIENDLY_NAME "$6" "Friendly name for project" "Notifications"
+setvar REPOSITORY_NAME "$5" "Repository name/Package Name" "Package_template_unity"
+setvar FRIENDLY_NAME "$6" "Friendly name for project" "PackageTemplate"
 setvar DESCRIPTION "$7" "Description" "Package for Unity game engine."
 setvar UNITY_VERSION "$8" "Unity version" "2021.3.11f1"
 
