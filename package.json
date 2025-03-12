@@ -1,6 +1,6 @@
 {
   "name": "com.simulanis.Package_template_unity",
-  "displayName": "Simulanis Solutions pvt ltd - PackageTemplate",
+  "displayName": "PackageTemplate",
   "version": "0.0.0",
   "unity": "2021.3.4f1",
   "description": "Package for Unity game engine.",

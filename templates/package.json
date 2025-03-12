@@ -1,7 +1,7 @@
 {
   "name": "com.{{COMPANY}}.{{REPOSITORY_NAME}}",
-  "displayName": "{{COMPANY_FRIENDLY_NAME}} - {{FRIENDLY_NAME}}",
-  "version": "0.0.0",
+  "displayName": "{{FRIENDLY_NAME}}",
+  "version": "0.0.1",
   "unity": "{{UNITY_VERSION}}",
   "description": "{{DESCRIPTION}}",
   "keywords": [
@@ -10,6 +10,16 @@
     "upm",
     "{{COMPANY}}",
     "utility"
+  ],
+  "dependencies": {
+    "com.unity.ide.vscode": "1.2.5"
+  },
+  "samples": [
+    {
+      "displayName": "Example",
+      "description": "Basic sample",
+      "path": "Samples~/Example"
+    }
   ],
   "homepage": "https://github.com/{{COMPANYGITHUB}}/{{REPOSITORY_NAME}}.git",
   "bugs": {
