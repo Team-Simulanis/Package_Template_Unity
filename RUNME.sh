@@ -27,15 +27,15 @@ setvaruser() {
   fi
 }
 
-setvar COMPANY_FRIENDLY_NAME "$1" "Company name" "Simulanis Solutions pvt ltd"
+setvar COMPANY_FRIENDLY_NAME "$1" "Company name" "Simulanis Solutions"
 setvar COMPANY "$2" "Company name in lower case" "simulanis"
 setvar COMPANYGITHUB "$2" "Company Github name" "Team-Simulanis"
 setvar REPORT_EMAIL "$3" "Unacceptable behavior may be reported at" "support@${COMPANY}.com"
 setvar COMPANY_WEBSITE "$4" "Company website" "https://${COMPANY}.com"
-setvaruser REPOSITORY_NAME "$5" "Repository name/Package Name" "Package_template_unity"
+setvaruser REPOSITORY_NAME "$5" "Package Name in lower case" "package_template_unity"
 setvaruser FRIENDLY_NAME "$6" "Friendly name for project" "PackageTemplate"
 setvaruser DESCRIPTION "$7" "Description" "Package for Unity game engine."
-setvaruser UNITY_VERSION "$8" "Unity version" "2021.3.11f1"
+setvaruser UNITY_VERSION "$8" "Unity version" "2021.3"
 
 # Escape special characters for input to be used in sed
 COMPANY_FRIENDLY_NAME=$(echo "$COMPANY_FRIENDLY_NAME" | sed -e 's/[]\/$*.^[]/\\&/g');
